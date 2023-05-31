@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | Schedule</title>
+</head>
+<body>
+    <form action="schedule" method="POST">
+        {% for x in appointment %}
+            <input type="text" name="doc_id" value="{{x.doc_id}}">
+            <input type="text" name="patient_login_id" value="{{x.patient_login_id}}"><br>
+        {% endfor %}
+            <label for="date_time">Date_Time: </label>
+            <input type="datetime-local" name="date_time" placeholder="date and time" id="date_time"><br><br>
+            <input type="submit" value="Schedule">
+    </form>
+</body>
+</html>

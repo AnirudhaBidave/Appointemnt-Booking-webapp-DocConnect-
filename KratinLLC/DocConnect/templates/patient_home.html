@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | User_Home</title>
+</head>
+<body>
+    <form action="home_user" method="POST">
+        {% for user in login_data %}
+            <h1>Hii {{user.username}} !! </h1>
+            <input type="hidden" value="{{user.id}}" name="patient_login_id"><br>
+        {% endfor %}
+        <input type="submit" value="MyProfile"><br><br>
+    </form>
+    <form action="specialization" method="POST">
+        {% for user in login_data %}
+         <input type="text" value="{{user.id}}" name="user_id">
+        {% endfor %}
+        <input type="submit" value="Select Specialisation">
+    </form>
+</body>
+</html>

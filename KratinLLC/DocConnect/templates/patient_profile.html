@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | Patient Profile</title>
+</head>
+<body>
+  <form action="profile_user" method="POST">
+    <div>
+        {% for patient in login_data %}
+            <input type="hidden" value={{patient.id}} name="patient_login_id">
+        {% endfor %}
+        <br>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="NAME"  required><br><br>
+        <label for="dob">Date of Birth: </label>
+        <input type="date" name="dob" id="dob" placeholder="DATE_OF_BIRTH"  required><br><br>
+        <label>Gender: </label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female<br><br>
+        <label for="contact_number">Contact_number: </label>
+        <input type="text" name="contact_number" id="contact_number" placeholder="contact_number"  required><br><br>
+        <label for="allergies">Allergies: </label>
+        <textarea rows="3" cols="25" name="allergies" id="allergies" spellcheck="true"  required></textarea><br><br>
+        <label for="medical_condition">Medical Condition: </label>
+        <textarea rows="3" cols="25" name="medical_condition" id="medical_condition" spellcheck="true" required></textarea><br><br>
+        <label for="previous_surgeries">Previous Surgeries: </label>
+        <textarea rows="3" cols="25" name="previous_surgeries" id="previous_surgeries" spellcheck="true" required></textarea><br><br>
+        <input type="submit" placeholder="Submit">
+    </div>
+  </form>
+</body>
+</html>

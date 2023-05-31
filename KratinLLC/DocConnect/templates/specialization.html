@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | Specialization</title>
+</head>
+<body>
+<form action="doctor" method="GET">
+<!--    {% for user in user_data %}-->
+<!--    <input type="text" name="user_id" value="{{user.user_id}}"/>-->
+<!--    {% endfor %}-->
+
+    <input autoComplete="on" type="text" list="specialization" placeholder="Specialization" name="specialization" />
+    <datalist id="specialization">
+        {% for doc in profile_data %}
+            <option value="{{ doc.specialization }}"></option>
+        {% endfor %}
+    </datalist>
+    <input type="submit" value="Select">
+</form>
+</body>
+</html>

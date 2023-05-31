@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | Doctor Home</title>
+</head>
+<body>
+    <form action="doctor_home" method="POST">
+        {% for doc in login_data %}
+            <h1>Hii {{doc.username}} !! </h1>
+            <input type="hidden" value="{{doc.id}}" name="doctor_login_id"><br><br>
+        {% endfor %}
+        <input type="submit" value="MyProfile">
+    </form>
+    <form action="doctor_appointment" method="POST">
+        {% for doc in login_data %}
+            <input type="text" value="{{doc_id}}" name="doctor_login_id"><br>
+        {% endfor %}
+        <input type="submit" value="Appointments">
+    </form>
+</body>
+</html>

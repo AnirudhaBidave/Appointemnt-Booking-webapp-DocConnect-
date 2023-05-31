@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | Patient Profile</title>
+</head>
+<body>
+  <form action="update_profile" method="post">
+    {% for user in profile_data %}
+        <label for="name">Name: </label>
+        <input type="text" value="{{user.name}}" name="name" id="name"><br><br>
+        <label for="dob">Date of Birth: </label>
+        <input type="text" value="{{user.dob}}" name="dob" id="dob"><br><br>
+        <label>Gender: </label>
+        <input type="text" value="{{user.gender}}" name="gender"><br><br>
+        <label for="contact_number">Contact_number: </label>
+        <input type="text" value="{{user.contact_number}}" name="contact_number" id="contact_number"><br><br>
+        <label for="allergies">Allergies: </label>
+        <input type="text" value="{{user.allergies}}" name="allergies" id="allergies"><br><br>
+        <label for="medical_condition">Medical Condition: </label>
+        <input type="text" value="{{user.medical_condition}}" name="medical_condition" id="medical_condition"><br><br>
+        <label for="previous_surgeries">Previous Surgeries: </label>
+        <input type="text" value="{{user.previous_surgeries}}" name="previous_surgeries" id="previous_surgeries"><br><br>
+        <input type="submit" value="Update">
+    {% endfor %}
+  </form>
+</body>
+</html>

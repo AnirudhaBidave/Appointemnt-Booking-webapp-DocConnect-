@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | Appointment</title>
+</head>
+<body>
+    <form action="approve" method="POST">
+        {% for x in appointment %}
+            <input type="hidden" value="{{x.patient_id}}" name="patient_id">
+        {% endfor %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">id</th>
+                    <th scope="col">Patient Name</th>
+                    <th scope="col">Date Time</th>
+                    <th scope="col">Approval</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in appointment %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td  id="appointment_id">
+                            <input autocomplete="on" type="hidden" name="appointment_id" value="{{x.id}}">
+                           {{x.id}}</td>
+                    <td><input type="submit" value="{{x.patient_name}}" name="profile"></td>
+                    <td>{{x.date_time}}</td>
+                    <td>
+                        <input autoComplete="on" type="text" list="approval" placeholder="Approval" name="approval"/>
+                        <datalist id="approval">
+                            <option value="pending">pending</option>
+                            <option value="accept">accept</option>
+                            <option value="canceled">canceled</option>
+                            <option value="completed">completed</option>
+                        </datalist>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <input type="submit" value="Save" name="approve">
+    </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocConnect | Appointment</title>
+    <style>
+        th{
+            text-align : left
+        }
+    </style>
+</head>
+<body>
+    <form action="appointment" method="POST">
+        {% for doc in profile_data %}
+        <input type="hidden" value="{{doc.id}}" name="doc_id">
+        {% endfor %}
+        <table class="table table-dark table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">doc_id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Specialization</th>
+                    <th scope="col">contact_number</th>
+                    <th scope="col">medical_licence_number</th>
+                    <th scope="col">education</th>
+                    <th scope="col">clinic_address</th>
+                    <th scope="col">work_experience</th>
+                    <th scope="col">take_appointment</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for doc in profile_data %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{doc.id}}</td>
+                <td>{{doc.name}}</td>
+                <td>{{doc.gender}}</td>
+                <td>{{doc.specialization}}</td>
+                <td>{{doc.contact_number}}</td>
+                <td>{{doc.medical_licence_number}}</td>
+                <td>{{doc.education}}</td>
+                <td>{{doc.clinic_address}}</td>
+                <td>{{doc.work_experience}}</td>
+                <td><input type="submit" value="Schedule"/></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </form>
+
+</body>
+</html>
