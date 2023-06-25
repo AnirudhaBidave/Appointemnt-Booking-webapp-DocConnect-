@@ -1,4 +1,4 @@
-# Assignment_KratinLLC
+# Appointent Booking webapp DocConnect
 DocConnect is a web-based application designed to assist the elderly (age group 65+) in accessing healthcare services conveniently and efficiently. The app aims to simplify the process of booking appointments with doctors, ensuring that older adults can receive timely medical attention and lead healthier lives. By leveraging the Django framework, DocConnect provides a user-friendly interface that enables seamless communication between elderly patients and registered doctors.
 Key Features:
 
